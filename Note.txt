@@ -1,0 +1,9 @@
+This Is Unbelievably Powerful (https://www.youtube.com/watch?v=Mi4EF9K87aM)
+
+https://github.com/Annie-Huang/intersection-observer
+https://github.com/Annie-Huang/resize-observer
+https://github.com/Annie-Huang/mutation-observer
+
+https://blog.webdevsimplified.com/2022-01/intersection-observer/
+https://blog.webdevsimplified.com/2022-01/resize-observer/
+----------------------------------------------------------------------------------
