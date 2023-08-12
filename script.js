@@ -23,6 +23,9 @@ const parent = document.querySelector('.parent');
 mutationObserver.observe(parent, { childList: true });
 // mutationObserver.observe(parent.children[0], { childList: true });
 
+// If you have this, we will not print any as we stop observing it.
+mutationObserver.disconnect();
+
 parent.children[0].remove();
 
 // Every single time you make changes to your dom, it's going to take all the changes that happened between the last time they were rendered to teh screen and
