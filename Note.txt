@@ -7,3 +7,29 @@ https://github.com/Annie-Huang/mutation-observer
 https://blog.webdevsimplified.com/2022-01/intersection-observer/
 https://blog.webdevsimplified.com/2022-01/resize-observer/
 ----------------------------------------------------------------------------------
+
+    /**
+     * Instructs the user agent to observe a given target (a node) and report any mutations based on the criteria given by options (an object).
+     *
+     * The options argument allows for setting mutation observation options via object members.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/observe)
+     */
+    observe(target: Node, options?: MutationObserverInit): void;
+
+interface MutationObserverInit {
+    /** Set to a list of attribute local names (without namespace) if not all attribute mutations need to be observed and attributes is true or omitted. */
+    attributeFilter?: string[];
+    /** Set to true if attributes is true or omitted and target's attribute value before the mutation needs to be recorded. */
+    attributeOldValue?: boolean;
+    /** Set to true if mutations to target's attributes are to be observed. Can be omitted if attributeOldValue or attributeFilter is specified. */
+    attributes?: boolean;
+    /** Set to true if mutations to target's data are to be observed. Can be omitted if characterDataOldValue is specified. */
+    characterData?: boolean;
+    /** Set to true if characterData is set to true or omitted and target's data before the mutation needs to be recorded. */
+    characterDataOldValue?: boolean;
+    /** Set to true if mutations to target's children are to be observed. */
+    childList?: boolean;
+    /** Set to true if mutations to not just target, but also target's descendants are to be observed. */
+    subtree?: boolean;
+}
