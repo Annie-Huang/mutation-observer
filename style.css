@@ -1,0 +1,15 @@
+.parent {
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  border: dashed;
+  padding: 10px;
+}
+.child {
+  min-width: 100px;
+  aspect-ratio: 1;
+  border: 1px solid;
+  background-color: darksalmon;
+  display: grid;
+  place-content: center;
+}
