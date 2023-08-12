@@ -8,6 +8,8 @@ https://blog.webdevsimplified.com/2022-01/intersection-observer/
 https://blog.webdevsimplified.com/2022-01/resize-observer/
 ----------------------------------------------------------------------------------
 
+!!! Notes about the usage is in the script.js file.
+
     /**
      * Instructs the user agent to observe a given target (a node) and report any mutations based on the criteria given by options (an object).
      *
