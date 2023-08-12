@@ -64,6 +64,7 @@ mutationObserver.observe(parent.children[0].childNodes[0], {
 });
 */
 
+/*
 // ---------------- Observing characterData  (via subtree) ----------------
 
 // Can change text of child 1, child 2, and child 3 and all will print out the MutationRecord
@@ -73,3 +74,15 @@ mutationObserver.observe(parent, {
   characterData: true,
   characterDataOldValue: true,
 });
+*/
+
+// ---------------- Observing attribute  (via subtree) ----------------
+
+mutationObserver.observe(parent, {
+  subtree: true,
+  attributes: true,
+});
+
+// You can see both attribute in parent or children can be printed out.
+parent.id = 'Test';
+parent.children[0].id = 'Test';
