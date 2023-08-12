@@ -1,14 +1,14 @@
 /*
 Each MutationRecord has the following attributes {
   addedNodes: [div]           << linked to 'childList' target
-  attributeName
+  attributeName: "id"
   attributeNamespace
   nextSibling
-  oldValue
+  oldValue: "parent"
   previousSibling
   removedNodes: [div.child]   << linked to 'childList' target
   target: div#parent.parent
-  type: "childList"
+  type: "childList" | "attributes"
 }
 * */
 
@@ -20,11 +20,13 @@ const mutationObserver = new MutationObserver((entries) => {
 
 const parent = document.querySelector('.parent');
 
+/*
+// ---------------- Observing childList ----------------
 mutationObserver.observe(parent, { childList: true });
 // mutationObserver.observe(parent.children[0], { childList: true });
 
 // If you have this, we will not print any as we stop observing it.
-mutationObserver.disconnect();
+// mutationObserver.disconnect();
 
 parent.children[0].remove();
 
@@ -36,3 +38,14 @@ parent.children[0].remove();
 setTimeout(() => {
   parent.appendChild(document.createElement('div'));
 }, 100);
+
+*/
+
+// ---------------- Observing attributes  ----------------
+mutationObserver.observe(parent, {
+  attributes: true,
+  attributeOldValue: true,
+  attributeFilter: ['id', 'title'],
+});
+
+parent.id = 'New Id';
