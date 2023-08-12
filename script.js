@@ -8,7 +8,7 @@ Each MutationRecord has the following attributes {
   previousSibling
   removedNodes: [div.child]   << linked to 'childList' target
   target: div#parent.parent
-  type: "childList" | "attributes"
+  type: "childList" | "attributes" | "characterData"
 }
 * */
 
@@ -41,6 +41,7 @@ setTimeout(() => {
 
 */
 
+/*
 // ---------------- Observing attributes  ----------------
 mutationObserver.observe(parent, {
   attributes: true,
@@ -49,3 +50,14 @@ mutationObserver.observe(parent, {
 });
 
 parent.id = 'New Id';
+*/
+
+// ---------------- Observing attributes  ----------------
+
+// Notice if you have parent.children[0], and the edit the text of the first child, it print nothing,
+// because parent.children[0] === <div class="child" contenteditable>Child 1</div>.
+// In order to get the 'Child 1', you will need to do parent.children[0].childNodes[0]
+mutationObserver.observe(parent.children[0].childNodes[0], {
+  characterData: true,
+  characterDataOldValue: true,
+});
