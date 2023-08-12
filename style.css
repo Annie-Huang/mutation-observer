@@ -5,7 +5,7 @@
   border: dashed;
   padding: 10px;
 }
-.child {
+.parent > * {
   min-width: 100px;
   aspect-ratio: 1;
   border: 1px solid;
